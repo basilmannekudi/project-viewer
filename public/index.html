@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Editor</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/progressbar.js/dist/progressbar.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h1>Logo</h1>
+        </div>
+        <div class="directory-list">
+            <h2>Directories</h2>
+            <ul id="directory-list"></ul>
+        </div>
+        <div class="editor-container">
+            <div class="editor-header">
+                <button id="choose-port">Choose Port</button>
+                <button id="run-code">Run Code</button>
+                <button id="upload-code">Upload</button>
+            </div>
+            <!-- Code Editor with default content -->
+            <textarea id="code-editor" rows="10" cols="50"></textarea>
+            <div class="terminal">
+                <pre id="terminal-output"></pre>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        // Function to set default code in the textarea
+        document.addEventListener('DOMContentLoaded', function () {
+            const defaultCode = `#include <iostream>
+using namespace std;
+
+int main() {
+    // Print letters F, I, S horizontally
+    cout << "****   *****   *** " << endl;
+    cout << "*        *     *   " << endl;
+    cout << "****   ****     *** " << endl;
+    cout << "*        *         *" << endl;
+    cout << "*      *****   *** " << endl;
+
+    return 0;
+};`;
+
+            document.getElementById('code-editor').value = defaultCode;
+        });
+    </script>
+</body>
+
+</html>
